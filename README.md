@@ -46,6 +46,21 @@ Things like 3.1, but we use the only Android NFC Reader, so we can click on the 
   
   <img src="image/android_home.jpg" width="400" />
 
+## 4 about the CCID Escape and Reset
+You can see demo_app/lib/utls/reader.dart
+
+```dart
+// cold/warm reset a smartcard, pcsc only!! 
+// return an ATR if successed
+String reset(bool cold);
+
+// send escape commands to ccid device, not a smartcard.
+// see https://ludovicrousseau.blogspot.com/2011/10/featureccidesccommand.html
+// https://tech.springcard.com/2013/scardcontrol-linux-and-java/
+RApdu escape(String capdu, int timeout);
+
+```
+
 <br />
 
 ---
